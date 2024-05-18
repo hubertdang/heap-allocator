@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -g -I$(SRCDIR)
 SRCDIR = src
 TESTDIR = test
 
-SOURCES = $(wildcard $(SRCDIR))/*.c $(wildcard $(TESTDIR))/*.c
+SOURCES = $(wildcard $(SRCDIR)/*.c) $(wildcard $(TESTDIR)/*.c)
 OBJECTS = $(SOURCES:.c=.o)
 EXECUTABLE = test_mem
 
