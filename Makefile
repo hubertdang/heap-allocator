@@ -5,7 +5,7 @@ TESTDIR = test
 
 SOURCES = $(wildcard $(SRCDIR)/*.c) $(wildcard $(TESTDIR)/*.c)
 OBJECTS = $(SOURCES:.c=.o)
-EXECUTABLE = test_mem
+EXECUTABLE = test_heap
 
 .PHONY: all clean
 

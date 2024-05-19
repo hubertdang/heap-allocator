@@ -1,2 +1,2 @@
-# memory-allocator
-My own custom memory allocator.
+# heap-allocator
+My own custom heap allocator.
