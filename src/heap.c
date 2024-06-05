@@ -26,7 +26,7 @@ typedef struct {
 
 /* GLOBALS */
 static heap_t g_heap;
-static uint8_t heap_inited = 0;
+static uint8_t g_heap_inited = 0;
 
 /* FUNCTIONS */
 
@@ -54,6 +54,8 @@ void heap_init()
 		curr->next = (blk_num == (NUM_BLOCKS - 1)) ? NULL : curr + 1;
 		curr++;
 	}
+
+        g_heap_inited = 1;
 }
 
 /*******************************************************************************
@@ -64,7 +66,7 @@ void heap_init()
  ******************************************************************************/
 void heap_clean()
 {
-	if (!heap_inited) {
+	if (!g_heap_inited) {
 		perror("heap not initialized yet");
 		exit(EXIT_FAILURE);
 	}
@@ -80,7 +82,7 @@ void heap_clean()
  ******************************************************************************/
 void *req_mem(size_t size)
 {
-	if (!heap_inited) {
+	if (!g_heap_inited) {
 		perror("heap not initialized yet");
 		exit(EXIT_FAILURE);
 	}
@@ -96,7 +98,7 @@ void *req_mem(size_t size)
  ******************************************************************************/
 void rel_mem(void *mem_block)
 {
-	if (!heap_inited) {
+	if (!g_heap_inited) {
 		perror("heap not initialized yet");
 		exit(EXIT_FAILURE);
 	}
